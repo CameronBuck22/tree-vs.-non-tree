@@ -1,0 +1,8 @@
+int arr[3] = {1,2,3};
+printf("%d", arr[5]);
+
+""fixed version""
+
+if (index >= 0 && index < 3) {
+    printf("%d", arr[index]);
+}
