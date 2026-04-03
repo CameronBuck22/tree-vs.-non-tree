@@ -1,0 +1,18 @@
+Summary of CWE:
+This happens when too much data is placed into a fixed-size buffer, which can overwrite memory.
+
+b. Example C code:
+
+char buffer[5];
+strcpy(buffer, "too long text");
+
+c. Remediation (fixed code):
+
+strncpy(buffer, "safe", sizeof(buffer)-1);
+buffer[sizeof(buffer)-1] = '\0';
+
+Explanation:
+Limit how much data is copied into buffers.
+
+d. Mitigation and detection:
+Use safe functions, input validation, and security tools.
