@@ -1,7 +1,17 @@
+a. Summary of CWE:
+This happens when memory is not freed after it is used, causing programs to waste memory.
+
+b. Example C code:
+
 int *ptr = malloc(sizeof(int));
 
-
-""fixed version""
+c. Remediation (fixed code):
 
 int *ptr = malloc(sizeof(int));
 free(ptr);
+
+Explanation:
+Always free memory when it is no longer needed.
+
+d. Mitigation and detection:
+Use tools like Valgrind and follow good memory management practices.
