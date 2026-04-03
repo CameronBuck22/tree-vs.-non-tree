@@ -1,8 +1,19 @@
+a. Summary of CWE:
+This happens when a program tries to access data outside the limits of an array, which can cause crashes or expose sensitive data.
+
+b. Example C code:
+
 int arr[3] = {1,2,3};
 printf("%d", arr[5]);
 
-""fixed version""
+c. Remediation (fixed code):
 
 if (index >= 0 && index < 3) {
     printf("%d", arr[index]);
 }
+
+Explanation:
+Always check the size of the array before accessing it.
+
+d. Mitigation and detection:
+Use bounds checking, secure coding practices, and tools like static analyzers.
