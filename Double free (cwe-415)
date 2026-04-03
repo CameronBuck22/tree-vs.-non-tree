@@ -1,10 +1,21 @@
+2. Double free (CWE-415)
+
+a. Summary of CWE:
+This happens when memory is freed more than once, which can cause crashes or security problems.
+
+b. Example C code:
+
 int *ptr = malloc(sizeof(int));
 free(ptr);
 free(ptr);
 
-
-
-""fixed version""
+c. Remediation (fixed code):
 
 free(ptr);
 ptr = NULL;
+
+Explanation:
+Setting the pointer to NULL prevents it from being freed again.
+
+d. Mitigation and detection:
+Track memory use carefully and use tools to detect memory errors.
