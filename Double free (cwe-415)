@@ -1,0 +1,10 @@
+int *ptr = malloc(sizeof(int));
+free(ptr);
+free(ptr);
+
+
+
+""fixed version""
+
+free(ptr);
+ptr = NULL;
